@@ -44,3 +44,48 @@ WHERE Name = "Layal";
 DELETE FROM students
 WHERE name="Layal"
 
+#Joins
+
+#1
+SELECT employees.Name, employees.Company, companies.Date
+FROM employees
+JOIN companies
+ON employees.Company = companies.Name;
+
+##2
+SELECT employees.Name
+FROM employees
+JOIN companies
+ON employees.Company = companies.Name
+WHERE companies.Date < 2000;
+
+#3
+SELECT companies.Name
+FROM companies
+JOIN employees
+ON employees.Company = companies.Name
+WHERE employees.Role = "Graphic Designer";
+
+#Count & Filter
+
+#1
+SELECT name, max(Points)
+FROM students;
+
+#2
+SELECT avg(Points)
+FROM students;
+
+#3
+SELECT count(ID)
+FROM students
+WHERE Points=500;
+
+#4
+SELECT name
+FROM students
+WHERE name like "%s%";
+
+#5
+SELECT * FROM students ORDER BY Points DESC;
+
